@@ -1,0 +1,17 @@
+python-nmap==0.6.1
+redis==2.10.6
+pcap-parser==0.5.10
+gevent==1.2.1
+requests==2.14.2
+timeout_decorator==0.4.0
+SQLAlchemy==1.1.9
+paramiko==2.2.1
+beautifulsoup4==4.6.0
+celery==4.1.0
+dnspython==1.15.0
+lxml==4.0.0
+pypinyin==0.25.0
+rpyc==3.4.4
+simplejson==3.11.1
+hashes==1.1.0
+python-hashes==0.1dev-r0

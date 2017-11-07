@@ -1,0 +1,364 @@
+<html>
+<head>
+<title>真眼扫描器(TScanner)--网站扫描报告</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body { background: #dedede; font-family: Arial, sans-serif; color: #404042; -webkit-font-smoothing: antialiased; }
+#container { width: 930px; padding: 0 15px; margin: 20px auto; background-color: #ffffff; }
+table { font-family: Arial, sans-serif; }
+a:link, a:visited { color: #e06228; text-decoration: none; }
+a:hover, a:active { color: #404042; text-decoration: underline; }
+h1 { font-size: 1.6em; line-height: 1.2em; font-weight: normal; color: #404042; }
+h2 { font-size: 1.3em; line-height: 1.2em; padding: 0; margin: 0.8em 0 0.3em 0; font-weight: normal; color: #404042;}
+.rule { height: 0px; border-top: 1px dashed #404042; padding: 0; margin: 20px -15px 0 -15px; }
+.srule { height: 0px; border-top: 1px solid #404042; padding: 0; margin: 20px -15px 0 -15px; }
+.title { color: #ffffff; background: #e06228; padding: 10px 15px; margin: 0 -15px 10px -15px; overflow: hidden; }
+.title h1 { color: #ffffff; padding: 0; margin: 0; font-size: 1.8em; }
+.title img { float: right; display: inline; padding: 0; margin: -3px -5px; }
+.heading { background: #404042; margin: 0 -15px 10px -15px; padding: 0; display: inline-block; overflow: hidden; }
+.heading img { float: right; display: inline; margin: 8px 10px 0 10px; padding: 0; }
+table.overview_table { border: 1px solid #c0c0c0; margin: 0; padding: 5px; }
+table.overview_table td.info { padding: 5px; background: #dedede; text-align: right; border-top: 2px solid #ffffff; border-right: 2px solid #ffffff; }
+table.overview_table td.info_end { padding: 5px; background: #dedede; text-align: right; border-top: 2px solid #ffffff; }
+table.overview_table td.colour_holder { padding: 0px; border-top: 2px solid #ffffff; border-right: 2px solid #ffffff; }
+table.overview_table td.colour_holder_end { padding: 0px; border-top: 2px solid #ffffff; }
+table.overview_table td.label { padding: 5px; font-weight: bold; }
+table.summary_table td { padding: 5px; background: #dedede; text-align: left; border-top: 2px solid #ffffff; border-right: 2px solid #ffffff; }
+table.summary_table td.icon { background: #404042; }
+.colour_block { padding: 5px; text-align: right; display: block; font-weight: bold; }
+.high_certain { border: 2px solid #f00; background: #f00; }
+.high_firm { border: 2px solid #f66; background: #f66; }
+.high_tentative { border: 2px solid #fcc; background: #fcc; }
+.medium_certain { border: 2px solid #f90; background: #f90; }
+.medium_firm { border: 2px solid #ffc266; background: #ffc266; }
+.medium_tentative { border: 2px solid #ffebcc; background: #ffebcc; }
+.low_certain { border: 2px solid #fe0; background: #fe0; }
+.low_firm { border: 2px solid #fff566; background: #fff566; }
+.low_tentative { border: 2px solid #fffccc; background: #fffccc; }
+.info_certain { border: 2px solid #ababab; background: #ababab; }
+.info_firm { border: 2px solid #cdcdcd; background: #cdcdcd; }
+.info_tentative { border: 2px solid #eee; background: #eee; }
+.row_total { border: 1px solid #dedede; background: #fff; }
+.grad_mark { padding: 4px; border-left: 1px solid #404042; display: inline-block; }
+.bar { margin-top: 3px; }
+.TOCH0 { font-size: 1.0em; font-weight: bold; word-wrap: break-word; }
+.TOCH1 { font-size: 0.8em; text-indent: -20px; padding-left: 50px; margin: 0; word-wrap: break-word; }
+.TOCH2 { font-size: 0.8em; text-indent: -20px; padding-left: 70px; margin: 0; word-wrap: break-word; }
+.BODH0 { font-size: 1.6em; line-height: 1.2em; font-weight: normal; padding: 10px 15px; margin: 0 -15px 10px -15px; display: inline-block; color: #ffffff; background-color: #e06228; width: 100%; word-wrap: break-word; }
+.BODH1 { font-size: 1.3em; line-height: 1.2em; font-weight: normal; padding: 13px 15px; margin: 0 -15px 0 -15px; display: inline-block; width: 100%; word-wrap: break-word; }
+.BODH2 { font-size: 1.0em; font-weight: bold; line-height: 2.0em; width: 100%; word-wrap: break-word; }
+.PREVNEXT { font-size: 0.7em; font-weight: bold; color: #ffffff; padding: 2px 5px; }
+.PREVNEXT:link, .PREVNEXT:visited { color: #e06228 !important; background: #ffffff !important; border: 1px solid #e06228 !important; text-decoration: none; }
+.PREVNEXT:hover, .PREVNEXT:active { color: #404042 !important; background: #e06228 !important; border: 1px solid #e06228 !important; text-decoration: none; }
+.TEXT { font-size: 0.8em; padding: 0; margin: 0; word-wrap: break-word; }
+TD { font-size: 0.8em; }
+.HIGHLIGHT { background-color: yellow; }
+.rr_div { background-color: #dedede; border: 2px solid #404042; width: 916px; word-wrap: break-word; -ms-word-wrap: break-word; margin: 0.8em 0; padding: 5px; font-size: 0.8em; max-height: 300px; overflow-y: auto; }
+
+@media print {
+    body { width: 100%; color: #000000; position: relative; }
+    #container { width: 98%; padding: 0; margin: 0; }
+    h1 { color: #000000; }
+    h2 { color: #000000;}
+    .rule { margin: 20px 0 0 0; border-top: 1px dashed }
+    .title { color: #000000; margin: 0 0 10px 0; padding: 10px 0; }
+    .title h1 { color: #000000; }
+    .title img { margin: -3px 0; }
+    .heading { margin: 0 0 10px 0; }
+    .BODH0 { color: #000000; }
+    .BODH1 { color: #000000; }
+    .PREVNEXT { visibility: hidden; display: none; }
+    .rr_div { width: 98%; margin: 0.8em auto; max-height: none !important; overflow: hidden; }
+}
+</style>
+<!--[if lt IE 8 ]> <style type="text/css"> 
+    body { text-align: center; }
+    #container { text-align: left; }
+    .rr_div { width: 896px; }
+</style> <![endif]-->
+<!--[if IE 8 ]> <style type="text/css"> 
+    .colour_block { padding: 10px 5px; }
+</style> <![endif]-->
+<!--[if gt IE 8 ]> <style type="text/css"> 
+    .colour_block { padding: 12px 5px; }
+</style> <![endif]-->
+<link rel="StyleSheet" href="dtree/dtree.css" type="text/css" />
+</head>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="dtree/dtree.js"></script>
+<script>
+function fillReport()
+{
+	<!--
+	var report_data = {"entry":"www.watscan.com",
+	"start_time":"",
+	"end_time":"",
+	"scan_profile":{"user-agent":"watscan/1.0"},
+	"scan_target":["10.10.10.10","app.watscan.com","test.watscan.com"],
+	"ipaddr":"10.10.10.10",
+	"port":[],
+	"domain":"baidu.com",
+	"relate_ipaddr":[],
+	"nameserver":[],
+	"subdomain":[],
+	"finger":[{
+			"site":"www.watscan.com",
+			"app_name":"discuz"
+		}],
+	"dir":[{
+			"site":"www.watscan.com",
+			"found":["http://www.watscan.com/1.php"]
+		}],
+	"vuln":[{
+			"site":"www.watscan.com",
+			"vlist":
+			[
+				{
+					"SQL注入漏洞":
+				 	[
+						{"url":"http://www.watscan.com/index.php?id=1","rank":"高危","param":"id","method":"GET"}
+					]
+				}
+			]
+		}]
+	};
+	-->
+
+	var report_data = #___JSON_DATA___#;
+
+	var scandata = document.getElementById('scandata');
+	var port     = document.getElementById('port');
+	var finger   = document.getElementById('finger');
+	var dirinfo  = document.getElementById('dirinfo');
+	var vulndata = document.getElementById('vuldata');
+
+	entry = report_data["entry"];
+	document.getElementById("entry").innerHTML="扫描地址:"+entry;
+
+	document.getElementById("scan_user_agent").innerHTML=report_data["scan_profile"]["useragent"];
+	document.getElementById("start_time").innerHTML=report_data["start_time"];
+	document.getElementById("end_time").innerHTML=report_data["end_time"];
+	document.getElementById("report_time").innerHTML=report_data["end_time"];
+
+
+	if(report_data["vuln"].length>0)
+	{
+		document.getElementById("result").innerHTML="危险";
+	}else{
+		document.getElementById("result").innerHTML="安全";
+	}
+	
+
+
+	d = new dTree('d');
+	d.add(0,-1,entry);
+
+	scan_target = report_data["scan_target"];
+	for(var i=0;i<scan_target.length;i++)
+	{
+		d.add(i+1,0,scan_target[i],'#');
+	}
+
+	scandata.innerHTML = d;
+
+
+	var site_port = report_data["port"];
+
+	for(var i=0; i<site_port.length;i++)
+	{
+		var index = i+ 1;
+
+		var item = site_port[i];
+
+		for(var ip in item)
+		{
+
+			port_list = item[ip]
+			if(port_list.length==1)
+				continue
+
+			var h3 = document.createElement('h3');
+			h3.setAttribute("id",index.toString());
+			h3.innerHTML = ip;
+
+			port.appendChild(h3);
+
+			var ul = document.createElement('ul');
+			var port_info = "";
+			for(var j=0; j<port_list.length; j++)
+			{
+				var p = port_list[j];
+				port_info += p+"(open) ";
+
+			}
+			var li = document.createElement('li');
+			li.innerHTML = port_info;
+			ul.appendChild(li);
+			port.appendChild(ul);
+
+			var div= document.createElement('div');
+			div.setAttribute("class","rule");
+			port.appendChild(div);
+			
+		}
+
+	}
+
+	var site_finger = report_data["finger"];
+
+	for(var i=0; i<site_finger.length;i++)
+	{
+		var index = i+ 1;
+
+		var item = site_finger[i]["app"];
+
+		if(item=="N/A")
+			continue;
+
+		var h3 = document.createElement('h3');
+		h3.setAttribute("id",index.toString());
+		h3.innerHTML = site_finger[i]["site"] + "----->" + item;
+
+		finger.appendChild(h3);
+
+		var div= document.createElement('div');
+		div.setAttribute("class","rule");
+		finger.appendChild(div);
+
+	}
+
+
+
+	var site_dirs = report_data["dir"];
+
+	for(var i=0; i<site_dirs.length;i++)
+	{
+		var index = i+ 1;
+
+		var item = site_dirs[i]["found"];
+
+		if(item.length==0)
+			continue;
+
+		var h3 = document.createElement('h3');
+		h3.setAttribute("id",index.toString());
+		h3.innerHTML = site_dirs[i]["site"];
+
+		dirinfo.appendChild(h3);
+
+		var ul = document.createElement('ul');
+		for(var j=0; j<item.length; j++)
+		{
+			var dir_found		= item[j];
+
+			var li = document.createElement('li');
+			li.innerHTML = dir_found;
+			ul.appendChild(li);
+
+		}
+		dirinfo.appendChild(ul);
+
+		var div= document.createElement('div');
+		div.setAttribute("class","rule");
+		dirinfo.appendChild(div);
+
+	}
+
+
+	var site_vulns = report_data["vuln"];
+
+	for(var i=0; i<site_vulns.length;i++)
+	{
+		var index = i+ 1;
+
+		var h3 = document.createElement('h3');
+		h3.setAttribute("id",index.toString());
+		h3.innerHTML = site_vulns[i]["site"];
+
+		vuldata.appendChild(h3);
+
+		var item = site_vulns[i]["vlist"];
+
+		for(var j in item)
+		{
+			var vul_name = j;
+			var vul_list = item[j];
+
+			for(var k=0;k<vul_list.length;k++)
+			{
+				var vul_url			= vul_list[k]["url"];
+				var vul_param		= vul_list[k]["param"];
+				var vul_method		= vul_list[k]["method"];
+				var vul_rank		= vul_list[k]["rank"];
+
+				var span = document.createElement('span');
+				span.innerHTML = vul_name+"("+vul_rank+")";
+
+				vuldata.appendChild(span);
+
+				var span = document.createElement('span');
+				span.setAttribute("class","TEXT");
+
+				var ul = document.createElement('ul');
+
+				var li = document.createElement('li');
+				li.innerText ="[" + vul_method + "]" + vul_url;
+				
+				span.appendChild(ul);
+				ul.appendChild(li);
+
+				vuldata.appendChild(span);
+			}
+		}
+
+		var div= document.createElement('div');
+		div.setAttribute("class","rule");
+		vuldata.appendChild(div);
+
+	}
+}
+</script>
+
+<body onload="fillReport();">
+
+<div id="container">
+
+	<div class="title"><h1>真眼(TScanner)-网站安全扫描报告</h1></div>
+	<h1 id="entry"></h1>
+	<div class="rule"></div>
+	<p>扫描签名：<span id="scan_user_agent"></span></p>
+	<p>扫描时间：<span id="start_time"></span>----<span id="end_time"></span></p>
+	<p>检测结果：<span id="result"></span></p>
+	<div class="rule"></div>
+
+	<h1>扫描目标信息</h1>
+	<div id="scandata" class="dtree">
+	</div>
+	<div class="rule"></div>
+
+	<h1>详细扫描结果</h1>
+	<h3>主机端口信息:</h3>
+	<div id="port">
+	</div>
+	<h3>应用指纹信息:</h3>
+	<div id="finger">
+	</div>
+	<h3>敏感目录信息:</h3>
+	<div id="dirinfo">
+	</div>
+	<h3>Web漏洞信息:</h3>
+	<div id="vuldata">
+	</div>
+	<!--<h1>漏洞修复建议</h1>
+	<div id="resolve">
+		<h3>SQL注入漏洞修复</h3>
+		<div class="rr_div">
+			<span></span>
+		</div>
+		<div class="rule"></div>
+	</div>-->
+	<div class="srule"></div>
+	<span class="TEXT"><br>Report generated by TScanner</a> at <span id="report_time"></span>.<br><br></span>
+</div>
+</body>
+</html>

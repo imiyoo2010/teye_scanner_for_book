@@ -1,0 +1,11 @@
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case01-FalsePositiveInjectionInLogin-PsAndIv-500ErrorOnIvFailure.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case02-FalsePositiveInjectionInLogin-PsAndIv-500SyntaxErrorOnIvFailure.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case03-FalsePositiveInjectionInLogin-PsAndIv-200ErrorOnIvFailure.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case04-FalsePositiveInjectionInLogin-PsAndIv-200SyntaxErrorOnIvFailure.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case05-FalsePositiveInjectionInLogin-PsAndIv-Different200ValidOnIvFailure.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case06-FalsePositiveInjectionInLogin-HoneyPotNoSQL-Fake500SyntaxErrorOnIvFailure.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case07-FalsePositiveInjectionInLogin-PsAndIv-500ErrorOnUnrelatedSyntaxError.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case08-FalsePositiveInjectionInLogin-PsAndIv-200ErrorOnUnrelatedSyntaxError.jsp?username=textvalue&password=textvalue2
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case09-FalsePositiveInjectionInUpdate-PsAndIv-Different200ValidOnIvFailure.jsp?transactionDate=2010-02-02
+http://192.168.1.105:8080/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case10-FalsePositiveInjectionInUpdate-PsAndIv-Identical200Response.jsp?transactionDate=2010-02-02
+

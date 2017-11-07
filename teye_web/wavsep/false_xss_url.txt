@@ -1,0 +1,8 @@
+http://192.168.1.105:8080/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case01-DoubleQuotesAndCrLfEncodingInProperty.jsp?userinput=abcd
+http://192.168.1.105:8080/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case02-SingleQuotesAndCrLfEncodingInProperty.jsp?userinput=abcd
+http://192.168.1.105:8080/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case03-DoubleQuotesEqualityAndBracketsEncodingInProperty.jsp?userinput=abcd
+http://192.168.1.105:8080/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case04-SingleQuotesEqualityAndBracketsEncodingInProperty.jsp?userinput=abcd
+http://192.168.1.105:8080/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case05-CrlfRemovalInHttpHeader.jsp?userinput=abcd
+http://192.168.1.105:8080/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case06-QuotesBracketsAndCrLfEncodingInTextProperty.jsp?userinput=abcd
+http://192.168.1.105:8080/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case07-AngleBracketsEncodingInBody.jsp?userinput=abcd
+

@@ -1,0 +1,238 @@
+<html>
+<head>
+<title>真眼扫描器(TScanner)-移动APP接口扫描报告</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body { background: #dedede; font-family: Arial, sans-serif; color: #404042; -webkit-font-smoothing: antialiased; }
+#container { width: 930px; padding: 0 15px; margin: 20px auto; background-color: #ffffff; }
+table { font-family: Arial, sans-serif; }
+a:link, a:visited { color: #e06228; text-decoration: none; }
+a:hover, a:active { color: #404042; text-decoration: underline; }
+h1 { font-size: 1.6em; line-height: 1.2em; font-weight: normal; color: #404042; }
+h2 { font-size: 1.3em; line-height: 1.2em; padding: 0; margin: 0.8em 0 0.3em 0; font-weight: normal; color: #404042;}
+.rule { height: 0px; border-top: 1px solid #404042; padding: 0; margin: 20px -15px 0 -15px; }
+.title { color: #ffffff; background: #e06228; padding: 10px 15px; margin: 0 -15px 10px -15px; overflow: hidden; }
+.title h1 { color: #ffffff; padding: 0; margin: 0; font-size: 1.8em; }
+.title img { float: right; display: inline; padding: 0; margin: -3px -5px; }
+.heading { background: #404042; margin: 0 -15px 10px -15px; padding: 0; display: inline-block; overflow: hidden; }
+.heading img { float: right; display: inline; margin: 8px 10px 0 10px; padding: 0; }
+table.overview_table { border: 1px solid #c0c0c0; margin: 0; padding: 5px; }
+table.overview_table td.info { padding: 5px; background: #dedede; text-align: right; border-top: 2px solid #ffffff; border-right: 2px solid #ffffff; }
+table.overview_table td.info_end { padding: 5px; background: #dedede; text-align: right; border-top: 2px solid #ffffff; }
+table.overview_table td.colour_holder { padding: 0px; border-top: 2px solid #ffffff; border-right: 2px solid #ffffff; }
+table.overview_table td.colour_holder_end { padding: 0px; border-top: 2px solid #ffffff; }
+table.overview_table td.label { padding: 5px; font-weight: bold; }
+table.summary_table td { padding: 5px; background: #dedede; text-align: left; border-top: 2px solid #ffffff; border-right: 2px solid #ffffff; }
+table.summary_table td.icon { background: #404042; }
+.colour_block { padding: 5px; text-align: right; display: block; font-weight: bold; }
+.high_certain { border: 2px solid #f00; background: #f00; }
+.high_firm { border: 2px solid #f66; background: #f66; }
+.high_tentative { border: 2px solid #fcc; background: #fcc; }
+.medium_certain { border: 2px solid #f90; background: #f90; }
+.medium_firm { border: 2px solid #ffc266; background: #ffc266; }
+.medium_tentative { border: 2px solid #ffebcc; background: #ffebcc; }
+.low_certain { border: 2px solid #fe0; background: #fe0; }
+.low_firm { border: 2px solid #fff566; background: #fff566; }
+.low_tentative { border: 2px solid #fffccc; background: #fffccc; }
+.info_certain { border: 2px solid #ababab; background: #ababab; }
+.info_firm { border: 2px solid #cdcdcd; background: #cdcdcd; }
+.info_tentative { border: 2px solid #eee; background: #eee; }
+.row_total { border: 1px solid #dedede; background: #fff; }
+.grad_mark { padding: 4px; border-left: 1px solid #404042; display: inline-block; }
+.bar { margin-top: 3px; }
+.TOCH0 { font-size: 1.0em; font-weight: bold; word-wrap: break-word; }
+.TOCH1 { font-size: 0.8em; text-indent: -20px; padding-left: 50px; margin: 0; word-wrap: break-word; }
+.TOCH2 { font-size: 0.8em; text-indent: -20px; padding-left: 70px; margin: 0; word-wrap: break-word; }
+.BODH0 { font-size: 1.6em; line-height: 1.2em; font-weight: normal; padding: 10px 15px; margin: 0 -15px 10px -15px; display: inline-block; color: #ffffff; background-color: #e06228; width: 100%; word-wrap: break-word; }
+.BODH1 { font-size: 1.3em; line-height: 1.2em; font-weight: normal; padding: 13px 15px; margin: 0 -15px 0 -15px; display: inline-block; width: 100%; word-wrap: break-word; }
+.BODH2 { font-size: 1.0em; font-weight: bold; line-height: 2.0em; width: 100%; word-wrap: break-word; }
+.PREVNEXT { font-size: 0.7em; font-weight: bold; color: #ffffff; padding: 2px 5px; }
+.PREVNEXT:link, .PREVNEXT:visited { color: #e06228 !important; background: #ffffff !important; border: 1px solid #e06228 !important; text-decoration: none; }
+.PREVNEXT:hover, .PREVNEXT:active { color: #404042 !important; background: #e06228 !important; border: 1px solid #e06228 !important; text-decoration: none; }
+.TEXT { font-size: 0.8em; padding: 0; margin: 0; word-wrap: break-word; }
+TD { font-size: 0.8em; }
+.HIGHLIGHT { background-color: yellow; }
+.rr_div { background-color: #dedede; border: 2px solid #404042; width: 916px; word-wrap: break-word; -ms-word-wrap: break-word; margin: 0.8em 0; padding: 5px; font-size: 0.8em; max-height: 300px; overflow-y: auto; }
+
+@media print {
+    body { width: 100%; color: #000000; position: relative; }
+    #container { width: 98%; padding: 0; margin: 0; }
+    h1 { color: #000000; }
+    h2 { color: #000000;}
+    .rule { margin: 20px 0 0 0; }
+    .title { color: #000000; margin: 0 0 10px 0; padding: 10px 0; }
+    .title h1 { color: #000000; }
+    .title img { margin: -3px 0; }
+    .heading { margin: 0 0 10px 0; }
+    .BODH0 { color: #000000; }
+    .BODH1 { color: #000000; }
+    .PREVNEXT { visibility: hidden; display: none; }
+    .rr_div { width: 98%; margin: 0.8em auto; max-height: none !important; overflow: hidden; }
+}
+</style>
+<!--[if lt IE 8 ]> <style type="text/css"> 
+    body { text-align: center; }
+    #container { text-align: left; }
+    .rr_div { width: 896px; }
+</style> <![endif]-->
+<!--[if IE 8 ]> <style type="text/css"> 
+    .colour_block { padding: 10px 5px; }
+</style> <![endif]-->
+<!--[if gt IE 8 ]> <style type="text/css"> 
+    .colour_block { padding: 12px 5px; }
+</style> <![endif]-->
+</head>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+function fillReport()
+{
+	<!--
+	var report_data = {
+		"end_time":"2015-06-30 18:26:41",
+		"api":["http://www.watscan.com/index.php?id=1"],
+		"vuln":[{
+			"site":"www.watscan.com",
+			"vlist":
+			[
+				{
+					"SQL注入漏洞":
+				 	[
+						{"url":"http://www.watscan.com/index.php?id=1","rank":"高危","param":"id","method":"GET"}
+					]
+				}
+			]
+		}]
+	}
+	-->
+	var report_data = #___JSON_DATA___#;
+
+	var apidata = document.getElementById('apidata');
+	var vuldata = document.getElementById('vuldata');
+
+	document.getElementById("report_time").innerHTML=report_data["end_time"];
+
+
+	var api 	= report_data["api"];
+
+	apidata.innerHTML ="<tr><td>序号</td><td>API</td></tr>";
+	for(var i=0;i<api.length;i++)
+	{
+		var index = i+1;
+		apidata.innerHTML += "<tr><td>"+index+"</td><td>"+api[i]+"</td></tr>";
+
+	}
+
+	var num_vuls = report_data["vuln"].length;
+	for(var i=0; i<num_vuls; i++)
+	{
+		var vlist= report_data["vuln"][i]["vlist"]
+
+		for(item in vlist)
+		{
+			var vul_name = item;
+			var vul_list = vlist[item];
+
+			for(var k=0;k<vul_list.length;k++)
+			{
+				var index			= k+1;
+				var vul_url			= vul_list[k]["url"];
+				var vul_param		= vul_list[k]["param"];
+				var vul_method		= vul_list[k]["method"];
+				var vul_rank		= vul_list[k]["rank"];
+
+				var hr = document.createElement('div');
+				hr.setAttribute("class","rule");
+
+				vuldata.appendChild(hr);
+
+				var span = document.createElement('span');
+				span.setAttribute("class","BODH1");
+				span.setAttribute("id",index.toString());
+				span.innerHTML = vul_url;
+
+				vuldata.appendChild(span);
+
+				var br= document.createElement('br');
+				vuldata.appendChild(br);
+
+				var h2_0= document.createElement('h2');
+				h2_0.innerHTML = "漏洞细节:";
+				vuldata.appendChild(h2_0);
+
+				var span1 = document.createElement('span');
+				span1.setAttribute("class","TEXT");
+
+				var ul = document.createElement('ul');
+
+				var li1 = document.createElement('li');
+				li1.innerHTML ="请求方法:"+vul_method;
+
+				var li2 = document.createElement('li');
+				li2.innerHTML ="漏洞等级:"+vul_rank;
+
+				var li3 = document.createElement('li');
+				li3.innerHTML ="漏洞参数:"+vul_param;
+
+				
+				span1.appendChild(ul);
+				ul.appendChild(li1);
+				ul.appendChild(li2);
+				ul.appendChild(li3);
+
+				vuldata.appendChild(span1);
+
+
+
+				var h2_1= document.createElement('h2');
+				h2_1.innerHTML = "修复建议:";
+				vuldata.appendChild(h2_1);
+
+				var div= document.createElement('div');
+				div.setAttribute("class","rr_div");
+				div.innerHTML="<ul><li>对参数进行控制</li><ul>"
+
+				vuldata.appendChild(div);	
+			}
+		}
+	}
+}
+</script>
+
+<body onload="fillReport();">
+
+<div id="container">
+
+<div class="title"><h1>移动APP接口扫描报告</h1></div>
+<h1>API域名信息</h1>
+<table width=100% border=1>
+	<tr>
+		<td><span class="BODH1">域名</span></td>
+		<td><span class="BODH1">IP</span></td>
+		<td><span class="BODH1">开放端口</span></td>
+		<td><span class="BODH1">Web Banner</span></td>
+	</tr>
+	<div id="domains">
+	<tr>
+		<td><span class="BODH1">api.diditaxi.com.cn</span></td>
+		<td><span class="BODH1">202.108.0.20</span></td>
+		<td><span class="BODH1">80,8080</span></td>
+		<td><span class="BODH1">Microsoft/IIS7.5</span></td>
+	</tr>
+	</div>
+</table>
+<div class="rule"></div>
+<h1>API接口信息</h1>
+<table width=100% border=1 id="apidata">
+</table>
+<div class="rule"></div>
+
+<h1>API漏洞详细信息</h1>
+<div id="vuldata">
+</div>
+
+<div class="rule"></div>
+<span class="TEXT"><br>Report generated by TScanner</a> at <span id="report_time"></span>.<br><br></span>
+</div>
+
+</body>
+</html>
