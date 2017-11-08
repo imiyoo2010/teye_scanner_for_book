@@ -346,17 +346,4 @@ class URL(object):
 		return '<URL for "%s">' % self.url_string.encode(self._encoding)
 
 if __name__=="__main__":
-	a_url = URL("http://www.baidu.com/index.php")
-	
-	print a_url.get_querystring().keys()
-	print a_url.get_postdata().keys()
-
-	b_url = URL("http://www.weshare.com.cn:80/test/1.asp")
-	res = b_url.get_dirs()
-	print res
-	
-	c_url = URL("http://www.weshare.com.cn:90/./abc")
-	print c_url.get_port()
-	print c_url.url_string
-	c_url.normalize_url()
-	print c_url.get_dirs()
+	pass
