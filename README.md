@@ -1,16 +1,17 @@
-# 《白帽子讲Web扫描》书籍参考代码
+# 《白帽子讲Web扫描》书籍参考代码说明
 
-代码已作处理，主要以学习和研究为目的，有问题可以随时留言交流。
+## 内容介绍
+> 由于本书并不是按照代码逻辑来进行编写的，所以建议读者先将项目代码运行起来后，然后再对照书籍来进行学习；代码已作处理，只保留完整的扫描器核心功能，主要以学习和研究为目的，相信认真读完本书后是有能力自己来实现完整云扫描功能；如果您在学习中有遇到问题或不清楚的地方，可以就具体问题进行留言交流和探讨。
 
-# 书籍购买链接
-* 当当网
 
-  http://product.dangdang.com/25092638.html
+## 购买链接：[京东](https://union-click.jd.com/jdc?e=&p=JF8BAOcJK1olXDYCV19VDUkQB19MRANLAjZbERscSkAJHTdNTwcKARlZAUEPVhcJRT9LT0VSBVJESw4PTRNJXGFOSxhBJVMOVF1cAE4VBGs4ciNJVQRbND0_Qxt1Rm0BWy9iKVRHElJROE4XAm4MEl0TXgUyV19eC00RAm4IH2slXQUyAjBdCUoWAm4NG14WbQQDVVtcDEkTBm04G1wXVAYKXVtdDUoQBl8PG1IlBVpaHAADC0oXAl84K1glbTYCZF1tSiVCUWlcElsUW1NRUwxYDxgfCzgLHltAXVNSAQtbWkpFUF8KGloRVDY)
 
-* 亚马逊
+## 部署安装
 
-  https://www.amazon.cn/%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2Web%E6%89%AB%E6%8F%8F-%E5%88%98%E6%BC%A9/dp/B071G3X4VN/
+ > git clone https://github.com/imiyoo2010/teye_scanner_for_book.git
+ 
+ > pip install -r requirements.txt
+ 
+ > python teye.py
 
-* 京东网
-
-  https://item.jd.com/12094365.html?dist=jd
+成功运行如下：
