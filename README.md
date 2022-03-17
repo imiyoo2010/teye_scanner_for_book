@@ -35,3 +35,4 @@
 ![](https://github.com/imiyoo2010/teye_scanner_for_book/blob/master/4.png)
 
 ## 联系方式 
+![](https://github.com/imiyoo2010/teye_scanner_for_book/blob/047a9ee4bb6d81315fb7f4e11c84878639d4255b/qrcode_for_gh_d5852a962ba2_258.jpg)
