@@ -17,13 +17,11 @@
 成功运行如下：
 ![](https://github.com/imiyoo2010/teye_scanner_for_book/blob/master/1.png)
 
-#
-# 使用演示
+## 使用演示
 
 一、扫描具体目标
 > python teye.py -s "http://demo.testfire.net/"
 ![](https://github.com/imiyoo2010/teye_scanner_for_book/blob/master/2.png)
-
 
 
 二、查看扫描报告
