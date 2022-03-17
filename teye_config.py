@@ -80,8 +80,8 @@ DISPATCH_TASK_INTERVAL= 10
 
 
 #COMMON VULNS
-SQL_KB="http://www.watscan.com/teye/index.php?c=vuln&a=detail&vid=1"
-XSS_KB="http://www.watscan.com/teye/index.php?c=vuln&a=detail&vid=2"
-LFI_KB="http://www.watscan.com/teye/index.php?c=vuln&a=detail&vid=3"
-CMD_KB="http://www.watscan.com/teye/index.php?c=vuln&a=detail&vid=5"
-BAK_KB="http://www.watscan.com/teye/index.php?c=vuln&a=detail&vid=6"
+SQL_KB="http://www.imiyoo.com/teye/index.php?c=vuln&a=detail&vid=1"
+XSS_KB="http://www.imiyoo.com/teye/index.php?c=vuln&a=detail&vid=2"
+LFI_KB="http://www.imiyoo.com/teye/index.php?c=vuln&a=detail&vid=3"
+CMD_KB="http://www.imiyoo.com/teye/index.php?c=vuln&a=detail&vid=5"
+BAK_KB="http://www.imiyoo.com/teye/index.php?c=vuln&a=detail&vid=6"
