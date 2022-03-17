@@ -5,7 +5,7 @@ banner.py
 
 version="1.0-dev for book"
 
-website="http://www.watscan.com/teye"
+website="http://www.imiyoo.com/teye"
 
 banner='''
  _____                 ____                                  
